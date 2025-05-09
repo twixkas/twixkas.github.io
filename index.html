@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Конус</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+	<style>
+		
+		html, body {
+			font-family: "Work Sans", sans-serif;
+			font-size: 40px;
+			margin: 0;
+			padding: 0;
+		}
+
+		html {
+			background: url('background.jpeg');
+			background-repeat: no-repeat;
+			background-size: cover;
+			color: #fff;
+		}
+
+		.container {
+			width: 100vw;
+			height: 100vh;
+
+			display: flex;
+			align-content: center;
+			align-items: center;
+			justify-content: center;
+		}
+
+		form {
+			background-color: rgba(0, 0, 0, 0.8);
+			padding: 1.5em;
+			border-radius: 15px;
+
+			display: grid;
+			grid-template-columns: auto;
+		}
+
+		input {
+			padding: 4px;
+			font-size: 37px;
+			background: rgba(0, 0, 0, 0);
+			color: #fff;
+		}
+
+		form > div {
+			padding: 0.15em 0;
+			width: 100%;
+			display: grid;
+			grid-template-columns: auto 50%;
+		}
+
+		form > div > label {
+			margin: 0 0.5em 0 auto;
+		}
+
+
+	</style>
+</head>
+<body>
+
+	<div class="container">
+
+		<form>
+
+			<div>
+				<label for="fname">a:</label>
+				<input type="number" id="a" name="fname"><br>
+			</div>
+
+			<div>
+				<label for="lname">operator (+ - * /):</label>
+				<input type="text" id="operator" name="lname">
+			</div>
+
+			<div>
+				<label for="lname">b:</label>
+				<input type="number" id="b" name="lname"><br>
+			</div>
+
+			<div>
+				<label>Result:</label>
+				<input id="result"></input>
+			</div>
+
+		</form>
+
+	</div>
+
+	<script>
+		function calc() {
+			$("select#foo").val();
+
+			a = parseFloat($("#a").val());
+			b = parseFloat($("#b").val());
+			operator = $("#operator").val();
+
+			console.log(operator);
+
+			if (operator == "+") {
+			    $('#result').val(a + b);
+			}
+			if (operator == "-") {
+			    $('#result').val(a - b);
+			}
+			if (operator == "*") {
+			   $('#result').val(a * b);
+			}
+			if (operator == "/") {
+			    if (b == 0) {
+			        $('#result').val("на 0 делить нельзя не надо это делать");
+			    } else {
+			        $('#result').val(a / b);
+			    }
+			}
+		}
+
+		$('#a').keyup(function(){
+			calc();
+		});
+		$('#b').keyup(function(){
+			calc();
+		});
+		$('#operator').keyup(function(){
+			calc();
+		});
+
+	</script>
+
+</body>
+</html>
