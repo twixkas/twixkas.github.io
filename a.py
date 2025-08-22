@@ -12,7 +12,7 @@ dis = pygame.display.set_mode((width, height), pygame.FULLSCREEN)
 font = pygame.font.SysFont("Arial", 48)
 
 mouse_x = 0
-mouse_y = 0
+mouse_y = 0 
 
 
 class Rect:
