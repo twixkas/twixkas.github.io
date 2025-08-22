@@ -64,8 +64,8 @@ for i in range(40):
 first_rect = rects[0]
 last_rect = rects[-1]
 
-texture1 = pygame.image.load("screamer1.jpg")
-texture2 = pygame.image.load("screamer2.jpg")
+texture1 = pygame.image.load("c.jpg")
+texture2 = pygame.image.load("d.jpg")
 
 
 h = (width / texture1.get_height()) * texture1.get_height()
@@ -118,7 +118,7 @@ while True:
         if is_filled:
             if last_rect.mouse_check():
                 done = True
-                pygame.mixer.music.load('screamer.mp3')
+                pygame.mixer.music.load('b.mp3')
                 pygame.mixer.music.play(0)
             else:
                 for rect in rects:
